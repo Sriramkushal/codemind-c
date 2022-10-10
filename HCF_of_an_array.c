@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    int i,j,found=0,a[100],n,hcf=1,min;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    min=a[0];
+    for(i=0;i<n;i++)
+    {
+        if(a[i]<min)
+        {
+            min=a[i];
+        }
+    }
+    for(i=min;i>=1;i--)
+    {
+        found=0;
+        for(j=0;j<n;j++)
+        {
+            if(a[j]%i!=0)
+            {
+                found=1;
+                break;
+            }
+        }
+        if(found==0)
+        {
+            hcf=i;
+            break;
+        }
+    }
+    printf("%d",hcf);
+}
