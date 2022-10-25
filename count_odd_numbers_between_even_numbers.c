@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main()
+{
+    int a[100],n,i,od1,od2,count=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(a[i]%2==0)
+        {
+            od1=i;
+            break;
+        }
+    }
+    for(i=n-1;i>=0;i--)
+    {
+        if(a[i]%2==0)
+        {
+            od2=i;
+            break;
+        }
+    }
+    for(i=od1;i<od2;i++)
+    {
+        if(a[i]%2!=0)
+        {
+            count++;
+        }
+    }
+    printf("%d",count);
+}
